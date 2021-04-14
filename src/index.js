@@ -1,4 +1,7 @@
 const app = require('./app');
+const { sequelize } = require('./database');
+
+sequelize.sync();
 
 app.listen(3333 || process.env.PORT, () => {
   console.log({
