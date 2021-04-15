@@ -1,8 +1,8 @@
-require('dotenv');
+require('dotenv')
 const app = require('./app');
 const { sequelize } = require('./database');
 
-sequelize.sync();
+sequelize.sync({ alter: true });
 
 app.listen(3333 || process.env.PORT, () => {
   console.log({
