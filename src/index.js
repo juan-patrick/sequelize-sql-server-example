@@ -1,7 +1,7 @@
 require('dotenv')
 require('./database');
 
-const app = require('./app');
+const app = require('./server');
 
 app.listen(3333 || process.env.PORT, () => {
   console.log({
