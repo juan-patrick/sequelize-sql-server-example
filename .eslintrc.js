@@ -20,7 +20,7 @@ module.exports = {
     'no-undef': 0,
     'no-console': 0,
     'import/prefer-default-export': 0,
-    'linebreak-style': ['error', 'unix'],
+    'linebreak-style': ['error', 'windows'],
     'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import-helpers/order-imports': [
