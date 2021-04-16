@@ -9,10 +9,14 @@ class User extends Model {
         allowNull: false,
       },
       lastName: DataTypes.STRING,
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
       age: {
         type: DataTypes.INTEGER,
         allowNull: false,
-      }
+      },
     }, { sequelize })
   }
 
