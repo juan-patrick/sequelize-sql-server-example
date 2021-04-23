@@ -12,7 +12,7 @@ routes.post('/students', StudentController.store);
 routes.get('/subjects', SubjectController.index);
 routes.post('/subjects', SubjectController.store);
 
-routes.get('/users/:userId/subjects', StudentSubjectController.index);
-routes.post('/users/:userId/subjects/:subjectId', StudentSubjectController.store);
+routes.get('/students/:userId/subjects', StudentSubjectController.index);
+routes.post('/students/:userId/subjects/:subjectId', StudentSubjectController.store);
 
 module.exports = routes;
