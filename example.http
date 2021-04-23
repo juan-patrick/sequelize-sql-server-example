@@ -1,14 +1,28 @@
-POST http://localhost:3333/users HTTP/1.1
+POST http://localhost:3333/students HTTP/1.1
 Content-Type: application/json
 
 {
   "firstName": "Juan Patrick",
   "lastName": "de Andrade Santos",
   "age": 20,
-  "email": "juan-p.andrade@outlook.com"
+  "personalEmail": "juan-p.andrade@outlook.com",
+  "institutionalEmail": "juan.santos6@fatec.sp.gov.br",
+  "ra": 2920481821001
 }
 
 ###
 
-GET http://localhost:3333/users HTTP/1.1
+GET http://localhost:3333/students HTTP/1.1
 Content-Type: application/json
+
+
+###
+
+POST http://localhost:3333/subjects HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Internet of Things",
+  "sigaCode": "IOT0121",
+  "classesPerWeek": 4
+}
