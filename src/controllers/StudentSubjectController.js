@@ -2,20 +2,33 @@ const Student = require('../models/Student');
 const Subject = require('../models/Subject');
 
 module.exports = {
-  async index(req, res) {
+  async indexSubjects(req, res) {
     const { studentId } = req.params;
 
     const student = await Student.findByPk(studentId, {
       include: {
         association: 'subjects',
-        attributes: ['name'],
         through: {
           attributes: []
         }
       }
     });
 
-    return res.json(student.subjects);
+    return res.json(student);
+  },
+  async indexStudents(req, res) {
+    const { subjectId } = req.params;
+
+    const subject = await Subject.findByPk(subjectId, {
+      include: {
+        association: 'students',
+        through: {
+          attributes: []
+        }
+      }
+    });
+
+    return res.json(subject.students);
   },
   async store(req, res) {
     const { studentId, subjectId } = req.params;
@@ -33,7 +46,6 @@ module.exports = {
     }
 
     await student.addSubject(subject);
-    await subject.addStudent(student);
 
     return res.json({ student, subject });
   },
