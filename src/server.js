@@ -3,11 +3,11 @@ const express = require('express');
 
 const routes = require('./routes');
 
-const app = express();
+const server = express();
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(routes);
+server.use(cors());
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
+server.use(routes);
 
-module.exports = app;
+module.exports = server;

@@ -1,27 +1,28 @@
 const { Model, DataTypes } = require('sequelize');
 
 
-class User extends Model {
+class Subject extends Model {
+
   static init(sequelize) {
     super.init({
-      firstName: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      lastName: DataTypes.STRING,
-      email: {
+      sigaCode: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
       },
-      age: {
+      classesPerWeek: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
     }, { sequelize })
   }
 
-  static associate() { }
+  static associate(models) {
+    this.belongsToMany(models.Student, { foreignKey: 'subject_id', through: 'students_subjects', as: 'students' });
+  };
 };
 
-module.exports = User;
-
+module.exports = Subject;
